@@ -18,13 +18,13 @@ const options = {
   },
 };
 const startBtn = document.querySelector('button');
+
 flatpickr('#datetime-picker', options);
 startBtn.disabled = true;
 
 startBtn.addEventListener('click', () => {
   timerId = setInterval(() => {
     startBtn.disabled = true;
-    /* document.querySelector('#datetime-picker').disabled = true; */
     const interval = convertMs(deadline - new Date());
     console.log(interval);
     console.log(interval.days);
