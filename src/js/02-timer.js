@@ -23,7 +23,7 @@ flatpickr('#datetime-picker', options);
 startBtn.disabled = true;
 
 startBtn.addEventListener('click', () => {
-  timerId = setInterval(() => {
+  let timerId = setInterval(() => {
     startBtn.disabled = true;
     const interval = convertMs(deadline - new Date());
     console.log(interval);
