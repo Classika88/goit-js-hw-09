@@ -4,13 +4,10 @@ const form = document.querySelector('.form');
 form.addEventListener('submit', e => {
   e.preventDefault();
 
-  delay = Number(form.elements.delay.value);
-  step = form.elements.step.value;
-  amount = form.elements.amount.value;
-  /* const {
-    elements: { delay, step, amount },
-  } = e.currentTarget;
- */
+  let delay = Number(form.elements.delay.value);
+  let step = form.elements.step.value;
+  let amount = form.elements.amount.value;
+
   for (let i = 0; i < amount; i++) {
     createPromise(i, step * i + delay)
       .then(success => Notiflix.Notify.success(success))
