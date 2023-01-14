@@ -21,19 +21,7 @@ const startBtn = document.querySelector('button');
 
 flatpickr('#datetime-picker', options);
 startBtn.disabled = true;
-/* const timer = {
-  intervalId: null,
 
-  start(deadline) {
-    startBtn.setAttribute("disabled", true);
-    this.intervalId = setInterval(() => {
-      const ms = deadline - Date.now();
-
-      if (ms <= 0) {
-        this.stop();
-
-        return;
-      } */
 startBtn.addEventListener('click', () => {
   timerId = setInterval(() => {
     startBtn.disabled = true;
@@ -54,10 +42,9 @@ startBtn.addEventListener('click', () => {
       interval.seconds
     ).padStart(2, 0);
     if (
-      interval.days + interval.hours + interval.minutes + interval.seconds ===
+      interval.days + interval.hours + interval.minutes + interval.seconds <=
       0
     ) {
-      this.stop();
       clearInterval(timerId);
     }
   }, 1000);
